@@ -1,6 +1,7 @@
-package com.controller;
+package com.musingtec.controller;
 
-import com.service.StudentService;
+import com.musingtec.bean.Student;
+import com.musingtec.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,9 +16,8 @@ public class StudentController {
 	 private StudentService studentService;
 	 
 	 @RequestMapping("/list")
-	    public List<Map<String, Object>> studentList() {
-		 List<Map<String, Object>> studentList=studentService.getStudentList();
-	        System.out.println(studentList);
-	        return studentList;  
+	    public List<Student> studentList() {
+		 List<Student> studentList=studentService.getStudentList();
+	        return studentList;
 	    }  
 }
